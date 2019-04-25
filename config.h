@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=16:antialias=true:autohint=true";
+static char *font = "FuraMono Nerd Font:pixelsize=17:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -206,7 +206,7 @@ MouseKey mkeys[] = {
 };
 
 static char *openurlcmd[] = { "/bin/sh", "-c",
-    "grep -aEo '(http|https)://[a-zA-Z0-9./?=_-]*'  | uniq | dmenu -l 10 | xargs -r xdg-open",
+    "sed 's/.*│//g' | tr -d '\n' | grep -aEo '((http|https)://|www\\.)[a-zA-Z0-9./?=_-]*' | uniq | dmenu_colored -l 10 | xargs -r xdg-open",
     "externalpipe", NULL };
 
 static Shortcut shortcuts[] = {
