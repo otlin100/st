@@ -5,12 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-<<<<<<< HEAD
 static char *font = "FuraMono Nerd Font:pixelsize=17:antialias=true:autohint=true";
-=======
-static char *font = "mono:pixelsize=16:antialias=true:autohint=true";
 static char *font2[] = { "Inconsolata for Powerline:pixelsize=16:antialias=true:autohint=true" };
->>>>>>> 261652b42f70646baa33a644f7edc7702bbcaa67
 static int borderpx = 2;
 
 /*
@@ -159,6 +155,7 @@ static unsigned int defaultattr = 11;
  */
 ResourcePref resources[] = {
 		{ "font",         STRING,  &font },
+		{ "fontalt0",     STRING,  &font2[0] },
 		{ "color0",       STRING,  &colorname[0] },
 		{ "color1",       STRING,  &colorname[1] },
 		{ "color2",       STRING,  &colorname[2] },
