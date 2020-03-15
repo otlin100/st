@@ -220,6 +220,10 @@ static char *copyurlcmd[] = { "/bin/sh", "-c",
     "st-urlpipe | dmen -i -p 'Copy which url?' -l 10 | tr -d '\n' | xclip -selection clipboard",
     "externalpipe", NULL };
 
+static char *gitaddcmd[] = { "/bin/sh", "-c",
+    "sed 's/.*│//g' | grep -E '^\\s{8}' | grep -v 'new file:   ' | grep -v 'deleted:    ' | tr -d ' ' | dmen -i -p 'Stage which file?' -l 10 | xargs git add",
+    "externalpipe", NULL };
+
 static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NULL };
 
 static Shortcut shortcuts[] = {
@@ -256,6 +260,7 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
 	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
 	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
+	{ MODKEY,               XK_a,           externalpipe,   {.v = gitaddcmd } },
 };
 
 /*
