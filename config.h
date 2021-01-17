@@ -237,7 +237,7 @@ MouseKey mkeys[] = {
 };
 
 static char *openurlcmd[] = { "/bin/sh", "-c",
-    "st-urlpipe | dmen -i -p 'Follow which url?' -l 10 | xargs -r xdg-open",
+    "st-urlpipe | dmen -i -p 'Follow which url?' -l 10 | xargs -r setsid xdg-open",
     "externalpipe", NULL };
 
 static char *copyurlcmd[] = { "/bin/sh", "-c",
